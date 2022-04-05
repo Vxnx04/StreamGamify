@@ -13,18 +13,20 @@ public class PlayerHp : MonoBehaviour
     public Sprite fullhearth;
 
     public Sprite emptyhearth;
+
+    private bool canTakeDamage;
     
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+        currentHp = playermaxHp;
+        canTakeDamage = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playermaxHp > currentHp)
+        /*if (playermaxHp > currentHp)
         {
             playermaxHp = currentHp;
         }
@@ -56,16 +58,38 @@ public class PlayerHp : MonoBehaviour
         if(playermaxHp <= 0)
         {gameObject.SetActive(false);
         SceneManager.LoadScene( SceneManager.GetActiveScene().name );
-        }
+        }*/
         
     }
     
 
     public void HurtPlayer(int damageToGive)
     {
-        playermaxHp -= damageToGive; 
-        
+        if (canTakeDamage)
+        {
+            StartCoroutine(TimeToTakeDamage());
+            currentHp -= damageToGive;
+
+            for (int i = 0; i < hpImage.Length; i++)
+            {
+                if(i >= currentHp)
+                {
+                    hpImage[i].enabled = false;
+                }
+            }
+
+            if (currentHp <= 0)
+            {
+                gameObject.SetActive(false);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
     
-    
+    private IEnumerator TimeToTakeDamage()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(0.2f);
+        canTakeDamage = true;
+    }
 }

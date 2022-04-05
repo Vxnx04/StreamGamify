@@ -1657,7 +1657,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 537426303}
         m_TargetAssemblyTypeName: mainmenu, Assembly-CSharp
-        m_MethodName: PlayAGame
+        m_MethodName: PlayAGameStreamer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

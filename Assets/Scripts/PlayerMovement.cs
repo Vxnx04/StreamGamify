@@ -9,6 +9,7 @@ public enum PlayerState
     attack,
     interact
 }
+
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerState currentState;
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
-   
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +42,12 @@ public class PlayerMovement : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         if (currentState == PlayerState.walk)
-        UpdateAnimationAndMove();
+            UpdateAnimationAndMove();
     }
-    
 
     private IEnumerator AttackCo()
     {
-        animator.SetBool("attacking",true);
+        animator.SetBool("attacking", true);
         currentState = PlayerState.attack;
         yield return null;
         animator.SetBool("attacking", false);
@@ -55,32 +55,34 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerState.walk;
 
     }
-    
-    void UpdateAnimationAndMove ()
+
+    void UpdateAnimationAndMove()
     {
         if (change != Vector3.zero)
         {
-        MoveCharacter();
-        animator.SetFloat("moveX", change.x);
-        animator.SetFloat("moveY", change.y);
-        animator.SetBool("moving", true);
+            MoveCharacter();
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveY", change.y);
+            animator.SetBool("moving", true);
         }
         else
         {
-        animator.SetBool("moving", false);
+            animator.SetBool("moving", false);
         }
-    
+
     }
+
     void MoveCharacter()
     {
         myRigidbody.MovePosition(
-            transform.position + change *speed *Time.deltaTime
-        ); 
-        
-            }
+            transform.position + change * speed * Time.deltaTime);
+
+
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("breakable"))
+        /*if (other.CompareTag("breakable"))
         {
             other.GetComponent<pot>().Smash();
             
@@ -91,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
             other.GetComponent<pot>().Correct();
         }
         
-        }
+        }*/
 
     }
-
+}
