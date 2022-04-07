@@ -39,6 +39,7 @@ public class PauseMan : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        Camera.main.GetComponent<AudioSource>().Pause();
 
     }
 
@@ -47,7 +48,7 @@ public class PauseMan : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
-
+        Camera.main.GetComponent<AudioSource>().UnPause();
     }
     public void GoToMainMenu()
     {
@@ -58,7 +59,9 @@ public class PauseMan : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        
+
+         UnityEditor.EditorApplication.isPlaying = false;
+
     }
 }
 

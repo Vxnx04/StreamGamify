@@ -9,9 +9,11 @@ public class playerHit : MonoBehaviour
     public int damageToGive;
     private PlayerHp player;
 
+
     void Start()
     {
         player = FindObjectOfType<PlayerHp>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,11 +22,14 @@ public class playerHit : MonoBehaviour
         {
             other.GetComponent<pot>().Smash();
             player.HurtPlayer(1);
+           
         }
 
         if (other.CompareTag("Finish"))
         {
             other.GetComponent<pot>().Correct();
+            
+    
         }
             
     }

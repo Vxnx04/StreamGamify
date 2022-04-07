@@ -21,6 +21,7 @@ public class AppearImage : MonoBehaviour
         {
             Time.timeScale = 1;
             customImage.enabled = false;
+            Camera.main.GetComponent<AudioSource>().UnPause();
         }
  
  
@@ -32,6 +33,7 @@ public class AppearImage : MonoBehaviour
                
             customImage.enabled = true;
             Time.timeScale = 0f;   
+            Camera.main.GetComponent<AudioSource>().Pause();
     
         }
     }
