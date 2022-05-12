@@ -14,7 +14,7 @@ public class AnswersSpawner : MonoBehaviour
 
         int count = 0;
 
-        while (count < 3)
+        while (count < answers.Length)
         {
             int option = Random.Range(0, answers.Length);
 

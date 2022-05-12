@@ -22,14 +22,8 @@ public class RoomMove : MonoBehaviour
         cam = Camera.main.GetComponent<CameraMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
      void OnTriggerEnter2D(Collider2D other)
-    {
+     {
         if (other.CompareTag("Player"))
         {
             cam.minPosition += cameraChange;
@@ -39,10 +33,8 @@ public class RoomMove : MonoBehaviour
             {
                 StartCoroutine(placeNameCo());
             }
-
         }
-
-        }
+     }
         
     private IEnumerator placeNameCo()
     {
