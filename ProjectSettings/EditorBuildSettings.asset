@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Streamer.unity
     guid: cee562ffe0b6217479dd47493c2eb4a7
   - enabled: 1
-    path: Assets/Scenes/Viewr.unity
-    guid: 6d490c41fe77a524686371ca06fe1b6b
+    path: Assets/Scenes/Viewer.unity
+    guid: 9c5c2b6211f783d4aa8571ba759e7c0e
   m_configObjects: {}

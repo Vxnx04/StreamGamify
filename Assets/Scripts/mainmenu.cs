@@ -6,18 +6,19 @@ using UnityEditor;
 
 public class mainmenu : MonoBehaviour
 {
-   public void PlayAGameStreamer()
-   {
-       SceneManager.LoadScene("Streamer");
+    public void Quit()
+    {
+        Application.Quit();
+        //EditorApplication.isPlaying = false;
+    }
 
-   }
-public void Quit()
-{
-    Application.Quit();
-    //EditorApplication.isPlaying = false;
-}
-public void PlayAGameViewer()
-   {
-       SceneManager.LoadScene("Viewr");
-   }
+    public void PlayGameAsViewer()
+    {
+       SceneManager.LoadScene("Viewer");
+    }
+
+    public void PlayGameAsStreamer()
+    {
+        SceneManager.LoadScene("Streamer");
+    }
 }
