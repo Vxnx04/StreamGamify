@@ -3085,8 +3085,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.6, y: 27.43}
-  m_SizeDelta: {x: 9.6182, y: 2.3699}
+  m_AnchoredPosition: {x: -2.2873, y: 27.43}
+  m_SizeDelta: {x: 12.2435, y: 2.3699}
   m_Pivot: {x: 0.5, y: 0.60747635}
 --- !u!114 &214089803
 MonoBehaviour:
@@ -3108,7 +3108,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pergunta 1:\nQual destes n\xE3o \xE9 um servi\xE7o de Live Streaming?"
+  m_text: "Pergunta 3:\nQual destes \xE9 um passo necess\xE1rio para o cadastro na
+    Twitch?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9953,6 +9954,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1153487284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1153487285}
+  - component: {fileID: 1153487286}
+  m_Layer: 0
+  m_Name: AnswersSpawner3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1153487285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153487284}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.02, y: 33.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1349257603}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153487286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153487284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 651732306f3e84a4cbe725afff2250fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  answers:
+  - {fileID: 411102853836609326, guid: aec4ac242ed86ff4183ea2113b598517, type: 3}
+  - {fileID: 1157002197351327053, guid: 0e156196bb8f819419b36a63e2f34105, type: 3}
+  - {fileID: 8809538608736281094, guid: 59e688e0c03a3f84a826cfbcd8dfe28b, type: 3}
 --- !u!1 &1211276619
 GameObject:
   m_ObjectHideFlags: 0
@@ -12331,6 +12379,7 @@ Transform:
   m_Children:
   - {fileID: 1715604657}
   - {fileID: 1309567784}
+  - {fileID: 1153487285}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
